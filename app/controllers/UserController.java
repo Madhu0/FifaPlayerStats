@@ -3,12 +3,11 @@ package controllers;
 import applications.LoginApplication;
 import applications.RegisterUserApplication;
 import com.fasterxml.jackson.databind.JsonNode;
+import io.swagger.annotations.*;
 import play.mvc.Controller;
 import play.mvc.Result;
-import io.swagger.annotations.*;
 
 import javax.inject.Inject;
-
 import java.util.concurrent.CompletionStage;
 
 @Api(value = "User", description = "User related flows")

@@ -1,10 +1,8 @@
 package responses;
 
-import com.fasterxml.jackson.databind.JsonNode;
 import lombok.Getter;
 import lombok.Setter;
 import models.User;
-import play.libs.Json;
 
 import java.time.Instant;
 

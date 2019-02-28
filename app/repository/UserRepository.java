@@ -3,16 +3,12 @@ package repository;
 import io.ebean.Ebean;
 import io.ebean.EbeanServer;
 import io.ebean.Expr;
-import io.ebean.Finder;
+import models.User;
 import play.db.ebean.EbeanConfig;
 import play.db.ebean.EbeanDynamicEvolutions;
 
 import javax.inject.Inject;
 import javax.inject.Named;
-
-import static java.util.concurrent.CompletableFuture.supplyAsync;
-import java.util.concurrent.CompletionStage;
-import models.User;
 
 @Named
 public class UserRepository {

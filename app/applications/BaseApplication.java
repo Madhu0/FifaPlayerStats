@@ -13,13 +13,13 @@ import repository.ApplicationExecutionContext;
 import repository.DatabaseExecutionContext;
 import requests.BaseRequest;
 import responses.BaseResponse;
-import utils.JsonUtils;
 
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
-import static java.util.concurrent.CompletableFuture.supplyAsync;
 import java.util.concurrent.CompletionException;
 import java.util.concurrent.CompletionStage;
+
+import static java.util.concurrent.CompletableFuture.supplyAsync;
 
 @Getter
 @Setter

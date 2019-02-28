@@ -19,8 +19,6 @@ import utils.Password;
 import javax.inject.Inject;
 import java.util.concurrent.CompletionException;
 
-import static java.util.concurrent.CompletableFuture.supplyAsync;
-
 public class RegisterUserApplication extends BaseApplication {
 
     private UserRepository userRepository;
