@@ -1,4 +1,4 @@
-package application;
+package applications;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -17,9 +17,8 @@ import utils.JsonUtils;
 import utils.Password;
 
 import javax.inject.Inject;
-import javax.inject.Named;
 import java.util.concurrent.CompletionException;
-import java.util.concurrent.CompletionStage;
+
 import static java.util.concurrent.CompletableFuture.supplyAsync;
 
 public class RegisterUserApplication extends BaseApplication {

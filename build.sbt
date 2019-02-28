@@ -16,5 +16,5 @@ libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-actor"   % "2.2-M3",
   "org.projectlombok" % "lombok" % "1.18.4" % "provided",
   "io.swagger" %% "swagger-play2" % "1.6.0",
-  "io.ebean" % "ebean-querybean" % "11.35.1"
+  "io.jsonwebtoken" % "jjwt" % "0.9.1"
 )

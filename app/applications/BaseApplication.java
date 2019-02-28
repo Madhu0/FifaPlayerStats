@@ -1,4 +1,4 @@
-package application;
+package applications;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -13,6 +13,9 @@ import repository.ApplicationExecutionContext;
 import repository.DatabaseExecutionContext;
 import requests.BaseRequest;
 import responses.BaseResponse;
+import utils.JsonUtils;
+
+import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 import static java.util.concurrent.CompletableFuture.supplyAsync;
 import java.util.concurrent.CompletionException;
@@ -38,13 +41,16 @@ public abstract class BaseApplication {
         Logger.info("In " + apiName);
         this.input = input;
         this.apiName = apiName;
+        this.requestId = UUID.randomUUID().toString();
     }
 
     public CompletionStage<Result> execute() {
         try {
             BaseRequest request = getRequest();
+            request.setRequestId(requestId);
             return supplyAsync(() -> {
                 BaseResponse resp = runInternal(request);
+                resp.setRequestId(requestId);
                 return Results.ok(resp.asJson());
             }).exceptionally((e) -> {
                 Logger.error("[Error] [" + this.apiName + "] ", e);

@@ -1,5 +1,7 @@
-package application;
+package applications;
 
+import authentication.AuthParams;
+import authentication.AuthTokenCreator;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import exceptions.CustomException;
@@ -48,7 +50,8 @@ public class LoginApplication extends BaseApplication {
             }
             LoginResponse response = new LoginResponse();
             response.setRequestId(request.getRequestId());
-            response.setJwtToken("abc");
+            AuthParams authParams = new AuthParams(user.getEmail(), user.getId());
+            response.setJwtToken(AuthTokenCreator.createAuthToken(authParams));
             response.setUserDetails(user);
             return response;
         } catch (Exception e) {
